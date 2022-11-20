@@ -13,7 +13,7 @@ export class ChatService {
     const rooms: Object[] = [
       'maquintosh', 'roomdasarabias', 'matoresh'
     ]
-    rooms.map((v, k) => {
+    rooms.map((v: Object, k: number) => {
       const json = {
         'id': k,
         'room': v
