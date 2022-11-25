@@ -4,17 +4,27 @@ import { AppService } from './app.service';
 import { ChatModule } from './chat/chat.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Chat } from './chat/entities/chat.entity';
+import { UserModule } from './user/user.module';
+import { ReactionModule } from './reaction/reaction.module';
+import { MessageModule } from './message/message.module';
+import { User } from './user/entities/user.entity';
+import { Message } from './message/entities/message.entity';
+import { Reaction } from './reaction/entities/reaction.entity';
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         type: 'sqlite',
         database: 'database.db',
-        entities: [Chat],
+        entities: [Chat, User, Message, Reaction],
+        migrations: ['dist/datasources/*.js'],
         synchronize: true, //development only
       }),
     }),
     ChatModule,
+    UserModule,
+    ReactionModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

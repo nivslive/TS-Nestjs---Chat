@@ -1,5 +1,5 @@
 
-PATCH http://localhost:3000/chat/123
+PATCH http://localhost:3333/chat/123
 Content-Type: application/json
 
 {
@@ -7,6 +7,4 @@ Content-Type: application/json
 }
 
 ###
-
-POST http://localhost:3000/chat
-Content-Type: application/json
+GET http://localhost:3333/chat
