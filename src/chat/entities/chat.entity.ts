@@ -15,11 +15,11 @@ export class Chat {
   @Column({ type: 'text' })
   room: string;
 
-  // @Column({ type: 'text' })
-  // slug: string;
+  @Column({ nullable: true, type: 'text' })
+  slug: string;
 
-  // @Column({ type: 'integer' })
-  // favorites: number;
+  @Column({ nullable: true, type: 'int' })
+  favorites: number;
 
   @OneToOne(() => User, (user: User) => user.leader)
   leader: User;

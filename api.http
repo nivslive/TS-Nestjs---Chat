@@ -1,5 +1,5 @@
 
-PATCH http://localhost:3333/chat/123
+PATCH http://localhost:3333/chat/1
 Content-Type: application/json
 
 {

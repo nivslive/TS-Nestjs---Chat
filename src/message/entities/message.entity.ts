@@ -15,10 +15,13 @@ export class Message {
   id: number;
 
   @Column({ type: 'text' })
-  slug: string;
+  color_type: string;
 
   @Column({ type: 'text' })
   color: string;
+
+  @Column({ type: 'text' })
+  emojis: string;
 
   @ManyToOne(() => Chat, (chat: Chat) => chat.room)
   room: Chat;
