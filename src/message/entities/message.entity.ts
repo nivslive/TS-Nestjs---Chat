@@ -20,6 +20,9 @@ export class Message {
   @Column({ type: 'text' })
   color: string;
 
+  @Column({ nullable: true, type: 'int' })
+  favorites: number;
+
   @Column({ type: 'text' })
   emojis: string;
 

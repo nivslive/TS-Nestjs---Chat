@@ -18,9 +18,6 @@ export class Chat {
   @Column({ nullable: true, type: 'text' })
   slug: string;
 
-  @Column({ nullable: true, type: 'int' })
-  favorites: number;
-
   @OneToOne(() => User, (user: User) => user.leader)
   leader: User;
 
