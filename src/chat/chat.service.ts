@@ -15,7 +15,11 @@ export class ChatService {
   }
 
   findAll() {
-    return this.chatModel.find();
+    return this.chatModel.find({
+      relations: {
+        users: true,
+      }
+    });
   }
 
   findOne(id: number) {

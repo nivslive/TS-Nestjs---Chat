@@ -18,7 +18,7 @@ export class Chat {
   @Column({ nullable: true, type: 'text' })
   slug: string;
 
-  @OneToOne(() => User, (user: User) => user.leader)
+  @OneToOne(() => User)
   leader: User;
 
   @ManyToOne(() => User, (user: User) => user.room)
