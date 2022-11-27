@@ -25,9 +25,14 @@ export class ChatController {
     return this.chatService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.chatService.findOne(+id);
+  @Get('/rooms')
+  findOnly() {
+    return this.chatService.findOnly();
+  }
+
+  @Get(':slug')
+  findOne(@Param('slug') slug: string) {
+    return this.chatService.findOne(slug);
   }
 
   @Patch(':id')

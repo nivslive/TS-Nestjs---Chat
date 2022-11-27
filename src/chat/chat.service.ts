@@ -23,8 +23,20 @@ export class ChatService {
     });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} chat`;
+  findOnly() {
+    return this.chatModel.find();
+  }
+
+  findOne(slug: string) {
+    return this.chatModel.findOne({
+      relations: {
+        users: true,
+        messages: true,
+      },
+      where: {
+        slug: slug,
+      },
+    });
   }
 
   update(id: number, updateChatDto: UpdateChatDto) {
