@@ -18,6 +18,9 @@ export class Message {
   color_type: string;
 
   @Column({ type: 'text' })
+  message: string;
+
+  @Column({ type: 'text' })
   color: string;
 
   @Column({ nullable: true, type: 'int' })

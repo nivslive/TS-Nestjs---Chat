@@ -18,7 +18,8 @@ export class ChatService {
     return this.chatModel.find({
       relations: {
         users: true,
-      }
+        messages: true,
+      },
     });
   }
 

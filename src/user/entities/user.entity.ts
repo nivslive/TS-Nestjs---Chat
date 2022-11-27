@@ -6,10 +6,10 @@ export class User {
   @PrimaryGeneratedColumn({ type: 'integer' })
   id: number;
 
-  @Column({ type: 'text' })
+  @Column({ nullable: false, type: 'text' })
   name: string;
 
-  @Column({ type: 'text' })
+  @Column({ nullable: true, type: 'text' })
   photo: string;
 
   @OneToOne(() => Chat)

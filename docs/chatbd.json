@@ -1,0 +1,18 @@
+{
+    "id": 15,
+    "room": "fodase",
+    "slug": "fodase",
+    "users": {
+        "id": 1,
+        "name": "nivs",
+        "photo": null
+    },
+    "messages": {
+        "id": 1,
+        "color_type": "rgb",
+        "message": "vim aqui falar umas merdas",
+        "color": "fodase",
+        "favorites": 1,
+        "emojis": "love, fodase, e eu"
+    }
+}
