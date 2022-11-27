@@ -35,9 +35,9 @@ export class ChatController {
     return this.chatService.findOne(slug);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateChatDto: UpdateChatDto) {
-    return this.chatService.update(+id, updateChatDto);
+  @Patch(':slug')
+  update(@Param('slug') slug: string, @Body() updateChatDto: UpdateChatDto) {
+    return this.chatService.update(slug, updateChatDto);
   }
 
   @Delete(':id')
