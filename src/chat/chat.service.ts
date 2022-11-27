@@ -39,8 +39,14 @@ export class ChatService {
     });
   }
 
-  update(id: number, updateChatDto: UpdateChatDto) {
-    return `This action updates a #${id} chat`;
+  async update(id: number, updateChatDto: UpdateChatDto) {
+    return this.chatModel
+      .createQueryBuilder('chat')
+      .update<Chat>(Chat, { room: 'new first name' })
+      .where('chat.id = :id', { id: id })
+      .execute();
+    // const updatedChatEntity: Chat = await this.chatModel.save(updateChatDto);
+    // return updatedChatEntity;
   }
 
   remove(id: number) {
