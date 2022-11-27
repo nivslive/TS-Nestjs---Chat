@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 
 @Entity({ name: 'reaction' })
 export class Reaction {
@@ -10,4 +10,10 @@ export class Reaction {
 
   @Column({ nullable: true, type: 'text' })
   path: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }

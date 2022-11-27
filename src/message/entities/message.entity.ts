@@ -7,6 +7,8 @@ import {
   ManyToOne,
   OneToOne,
   JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity({ name: 'message' })
@@ -35,4 +37,10 @@ export class Message {
   @OneToOne(() => User)
   @JoinColumn()
   user: User;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }

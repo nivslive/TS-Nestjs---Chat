@@ -1,5 +1,5 @@
 import { Chat } from 'src/chat/entities/chat.entity';
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity({ name: 'user' })
 export class User {
@@ -14,4 +14,10 @@ export class User {
 
   @OneToOne(() => Chat)
   room: Chat;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
