@@ -20,6 +20,7 @@ export class MessageService {
     return this.messageModel.find({
       relations: {
         user: true,
+        room: true,
       },
     });
   }
