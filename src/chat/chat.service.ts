@@ -38,7 +38,17 @@ export class ChatService {
       },
     });
   }
-
+  findPerID(id: number) {
+    return this.chatModel.findOne({
+      relations: {
+        users: true,
+        messages: true,
+      },
+      where: {
+        id: id,
+      },
+    });
+  }
   async update(slug: string, updateChatDto: UpdateChatDto) {
     return this.chatModel
       .createQueryBuilder('chat')

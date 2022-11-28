@@ -19,7 +19,7 @@ export class Chat {
   @Column({ type: 'text' })
   room: string;
 
-  @Column({ unique: true, nullable: false, type: 'text' })
+  @Column({ nullable: true, type: 'text' })
   slug: string;
 
   @OneToOne(() => User)

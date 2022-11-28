@@ -35,6 +35,11 @@ export class ChatController {
     return this.chatService.findOne(slug);
   }
 
+  @Get('/room/:id')
+  findPerID(@Param('id') id: number) {
+    return this.chatService.findPerID(id);
+  }
+
   @Patch(':slug')
   update(@Param('slug') slug: string, @Body() updateChatDto: UpdateChatDto) {
     return this.chatService.update(slug, updateChatDto);
