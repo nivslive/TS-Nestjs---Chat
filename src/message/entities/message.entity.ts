@@ -34,7 +34,9 @@ export class Message {
   @ManyToOne(() => Chat)
   room: Chat;
 
-  @OneToOne(() => User)
+  @OneToOne(() => User, {
+    cascade: ['insert', 'update'],
+  })
   user: User;
 
   @CreateDateColumn()
