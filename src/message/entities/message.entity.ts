@@ -16,13 +16,13 @@ export class Message {
   @PrimaryGeneratedColumn({ type: 'integer' })
   id: number;
 
-  @Column({ type: 'text' })
+  @Column({ nullable: true, type: 'text' })
   color_type: string;
 
-  @Column({ type: 'text' })
+  @Column({ nullable: true, type: 'text' })
   message: string;
 
-  @Column({ type: 'text' })
+  @Column({ nullable: true, type: 'text' })
   color: string;
 
   @Column({ nullable: true, type: 'int' })
@@ -31,11 +31,10 @@ export class Message {
   @Column({ type: 'text' })
   emojis: string;
 
-  @ManyToOne(() => Chat, (chat: Chat) => chat.room)
+  @ManyToOne(() => Chat)
   room: Chat;
 
   @OneToOne(() => User)
-  @JoinColumn()
   user: User;
 
   @CreateDateColumn()
