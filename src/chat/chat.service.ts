@@ -49,11 +49,11 @@ export class ChatService {
       },
     });
   }
-  async update(slug: string, updateChatDto: UpdateChatDto) {
+  async update(id: string, updateChatDto: UpdateChatDto) {
     return this.chatModel
       .createQueryBuilder('chat')
-      .update<Chat>(Chat, { room: 'new first name' })
-      .where('chat.slug = :slug', { slug: slug })
+      .update<Chat>(Chat, updateChatDto)
+      .where('chat.id = :id', { id: id })
       .execute();
     // const updatedChatEntity: Chat = await this.chatModel.save(updateChatDto);
     // return updatedChatEntity;

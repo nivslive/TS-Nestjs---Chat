@@ -40,9 +40,9 @@ export class ChatController {
     return this.chatService.findPerID(id);
   }
 
-  @Patch(':slug')
-  update(@Param('slug') slug: string, @Body() updateChatDto: UpdateChatDto) {
-    return this.chatService.update(slug, updateChatDto);
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateChatDto: UpdateChatDto) {
+    return this.chatService.update(id, updateChatDto);
   }
 
   @Delete(':id')
