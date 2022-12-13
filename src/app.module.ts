@@ -10,13 +10,15 @@ import { MessageModule } from './message/message.module';
 import { User } from './user/entities/user.entity';
 import { Message } from './message/entities/message.entity';
 import { Reaction } from './reaction/entities/reaction.entity';
+import { SubjectModule } from './subject/subject.module';
+import { Subject } from './subject/entities/subject.entity';
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         type: 'sqlite',
         database: 'database.db',
-        entities: [Chat, User, Message, Reaction],
+        entities: [Chat, User, Message, Reaction, Subject],
         migrations: ['dist/datasources/*.js'],
         synchronize: true, //development only
       }),
@@ -25,6 +27,7 @@ import { Reaction } from './reaction/entities/reaction.entity';
     UserModule,
     ReactionModule,
     MessageModule,
+    SubjectModule,
   ],
   controllers: [AppController],
   providers: [AppService],

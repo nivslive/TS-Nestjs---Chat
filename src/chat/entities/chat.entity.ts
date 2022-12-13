@@ -1,5 +1,6 @@
 import { Message } from 'src/message/entities/message.entity';
 import { User } from 'src/user/entities/user.entity';
+import { Subject } from 'src/subject/entities/subject.entity';
 import {
   Entity,
   Column,
@@ -28,6 +29,9 @@ export class Chat {
 
   @ManyToOne(() => User, (user: User) => user.room)
   users: User;
+
+  @OneToMany(() => Subject, (subject: Subject) => subject.id)
+  subjects: Subject;
 
   @OneToMany(() => Message, (message: Message) => message.room)
   messages: Message;
