@@ -24,17 +24,11 @@ export class Chat {
   @Column({ nullable: true, type: 'text' })
   slug: string;
 
-  @OneToOne(() => User)
-  leader: User;
-
   @ManyToOne(() => User, (user: User) => user.room)
   users: User;
 
   @OneToMany(() => Subject, (subject: Subject) => subject.id)
   subjects: Subject;
-
-  @OneToMany(() => Message, (message: Message) => message.room)
-  messages: Message;
 
   @CreateDateColumn()
   created_at: Date;

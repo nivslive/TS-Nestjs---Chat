@@ -34,6 +34,9 @@ export class Message {
   @ManyToOne(() => Chat)
   room: Chat;
 
+  @OneToOne(() => User)
+  leader: User;
+
   @ManyToOne(() => User, (user: User) => user.id)
   user: User;
 

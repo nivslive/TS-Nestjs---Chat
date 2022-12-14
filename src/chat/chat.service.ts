@@ -18,7 +18,7 @@ export class ChatService {
     return this.chatModel.find({
       relations: {
         users: true,
-        messages: true,
+        subjects: true,
       },
     });
   }
@@ -31,7 +31,7 @@ export class ChatService {
     return this.chatModel.findOne({
       relations: {
         users: true,
-        messages: true,
+        subjects: true,
       },
       where: {
         slug: slug,
@@ -42,7 +42,7 @@ export class ChatService {
     return this.chatModel.findOne({
       relations: {
         users: true,
-        messages: true,
+        subjects: true,
       },
       where: {
         id: id,
