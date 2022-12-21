@@ -27,8 +27,8 @@ export class Chat {
   @ManyToOne(() => User, (user: User) => user.room)
   users: User;
 
-  @OneToMany(() => Subject, (subject: Subject) => subject.id)
-  subjects: Subject;
+  @ManyToOne(() => Subject)
+  subjects: Subject[];
 
   @CreateDateColumn()
   created_at: Date;

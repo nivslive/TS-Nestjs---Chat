@@ -24,7 +24,7 @@ export class Subject {
   @OneToMany(() => Message, (message: Message) => message.room)
   messages: Message;
 
-  @ManyToOne(() => Chat, (chat: Chat) => chat.id)
+  @OneToMany(() => Chat, (chat: Chat) => chat.id)
   chat: Chat;
 
   @CreateDateColumn()
