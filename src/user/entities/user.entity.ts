@@ -1,5 +1,5 @@
-import { Chat } from 'src/chat/entities/chat.entity';
-import { Message } from 'src/message/entities/message.entity';
+import { Chat } from '../../chat/entities/chat.entity';
+import { Message } from '../../message/entities/message.entity';
 import {
   Entity,
   Column,

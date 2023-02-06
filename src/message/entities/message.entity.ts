@@ -1,5 +1,5 @@
-import { Chat } from 'src/chat/entities/chat.entity';
-import { User } from 'src/user/entities/user.entity';
+import { Chat } from '../../chat/entities/chat.entity';
+import { User } from '../../user/entities/user.entity';
 import {
   Entity,
   Column,

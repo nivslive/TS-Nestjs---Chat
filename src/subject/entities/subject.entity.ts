@@ -1,5 +1,5 @@
-import { Chat } from 'src/chat/entities/chat.entity';
-import { Message } from 'src/message/entities/message.entity';
+import { Chat } from '../../chat/entities/chat.entity';
+import { Message } from '../../message/entities/message.entity';
 import {
   Entity,
   Column,
@@ -21,8 +21,10 @@ export class Subject {
   @Column({ nullable: true, type: 'text' })
   slug: string;
 
-  @OneToMany(() => Message, (message: Message) => message.room)
-  messages: Message;
+  @OneToMany(() => Message, (message: Message) => message.room, {
+    cascade: true,
+  })
+  messages: Message[];
 
   @OneToMany(() => Chat, (chat: Chat) => chat.id)
   chat: Chat;

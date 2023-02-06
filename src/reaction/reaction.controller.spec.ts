@@ -14,7 +14,7 @@ describe('ReactionController', () => {
     controller = module.get<ReactionController>(ReactionController);
   });
 
-  it('should be defined', () => {
+  it('controller should be defined', () => {
     expect(controller).toBeDefined();
   });
 });

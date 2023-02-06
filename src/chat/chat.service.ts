@@ -7,7 +7,7 @@ import { Chat } from './entities/chat.entity';
 
 @Injectable()
 export class ChatService {
-  constructor(@InjectRepository(Chat) private chatModel: Repository<Chat>) {}
+  constructor(@InjectRepository(Chat) private chatModel?: Repository<Chat>) {}
   async create(createChatDto: CreateChatDto) {
     const userEntity: Chat = this.chatModel.create(createChatDto);
     const createdUserEntity: Chat = await this.chatModel.save(userEntity);

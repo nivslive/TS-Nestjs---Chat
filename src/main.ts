@@ -11,6 +11,6 @@ async function bootstrap() {
       'http://localhost:3001',
     ],
   });
-  await app.listen(3333);
+  await app.listen(3336);
 }
 bootstrap();
