@@ -26,7 +26,7 @@ export class Subject {
   })
   messages: Message[];
 
-  @OneToMany(() => Chat, (chat: Chat) => chat.id)
+  @ManyToOne(() => Chat, (chat: Chat) => chat.id)
   chat: Chat;
 
   @CreateDateColumn()

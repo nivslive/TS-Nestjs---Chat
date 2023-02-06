@@ -8,6 +8,7 @@ import {
   ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity({ name: 'chat' })
@@ -24,7 +25,7 @@ export class Chat {
   @ManyToOne(() => User, (user: User) => user.room)
   users: User;
 
-  @ManyToOne(() => Subject)
+  @OneToMany(() => Subject, (subject: Subject) => subject.chat)
   subjects: Subject;
 
   @CreateDateColumn()
