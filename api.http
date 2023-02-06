@@ -8,3 +8,14 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3333/chat
+
+
+####
+POST http://localhost:3333/subject
+Content-Type: application/json
+
+{
+    "chat": 1,
+    "name": "oi",
+    "slug": "oi"
+}
